@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="themeToggle">🌙 Dark Mode</button>
+    
+    <div class="container">
+        <h1>Gradient Generator</h1>
+        
+        <div class="preview-box" id="previewBox"></div>
+
+        <div class="controls">
+            <div class="color-inputs">
+                <div>
+                    <label for="color1">Color 1:</label>
+                    <input type="color" id="color1" value="#ff5733">
+                </div>
+                <div>
+                    <label for="color2">Color 2:</label>
+                    <input type="color" id="color2" value="#33ff57">
+                </div>
+            </div>
+
+            <div class="options">
+                <label for="gradientType">Gradient Type:</label>
+                <select id="gradientType">
+                    <option value="linear">Linear</option>
+                    <option value="radial">Radial</option>
+                </select>
+                
+                <div id="angleControl">
+                    <label for="angle">Angle (°):</label>
+                    <input type="range" id="angle" min="0" max="360" value="90">
+                    <span id="angleValue">90°</span>
+                </div>
+            </div>
+
+            <label for="presetGradients">Preset Gradients:</label>
+            <select id="presetGradients">
+                <option value="">Select a Preset</option>
+                <option value="#ff7e5f,#feb47b">Sunset</option>
+                <option value="#6a11cb,#2575fc">Purple Blue</option>
+                <option value="#ff416c,#ff4b2b">Pink Fire</option>
+                <option value="#56ab2f,#a8e063">Green Nature</option>
+                <option value="#0f2027,#203a43,#2c5364">Dark Ocean</option>
+            </select>
+
+            <div class="buttons">
+                <button id="randomBtn">🎨 Random Gradient</button>
+                <button id="copyBtn">📋 Copy CSS</button>
+                <button id="downloadBtn">⬇️ Download PNG</button>
+                <button id="downloadSvgBtn">📄 Download SVG</button>
+            </div>
+        </div>
+
+        <p id="cssCode">background: linear-gradient(90deg, #ff5733, #33ff57);</p>
+    </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
